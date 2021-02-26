@@ -1,0 +1,89 @@
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <div class="header"><h1>Курс: Angular 10+ Базовые знания</h1></div>
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">Журнал успеваемости студентов</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li>
+              <a mat-button class="waves-effect waves-light btn"
+                ><i class="material-icons left">add_box</i>Добавить</a
+              >
+            </li>
+            <!-- <li>
+                <a
+                  mat-button
+                  (click)="openEditDialog()"
+                  class="waves-effect waves-light btn"
+                  ><i class="material-icons left">edit</i>Редактировать</a
+                >
+              </li>
+              <li>
+                <a href="" class="waves-effect waves-light btn btn-red"
+                  ><i class="material-icons left">delete_forever</i>Удалить</a
+                >
+              </li> -->
+          </ul>
+        </div>
+      </nav>
+      <table class="highlight">
+        <thead>
+          <tr>
+            <th rowspan="2">
+              Номер <br />
+              порядковый
+            </th>
+            <th rowspan="2">Фамилия Имя</th>
+            <th colspan="4">Дата урока</th>
+            <th rowspan="2">
+              Средний <br />
+              балл
+            </th>
+            <th rowspan="2">
+              Средний <br />
+              балл (окр.)
+            </th>
+          </tr>
+          <tr>
+            <ng-container *ngFor="let lesson of lessons">
+              <th>
+                {{ lesson.lessonDate | date: "dd.MM.yyyy" }}
+              </th>
+            </ng-container>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let student of students; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>
+              {{ student.studentLastName }} {{ student.studentFirstName }}
+            </td>
+            <ng-container *ngFor="let grade of studentsGrade">
+              <td
+                class="align-center"
+                *ngIf="grade.studentId === student.studentId"
+              >
+                {{ grade.studentGrade }}
+              </td>
+            </ng-container>
+
+            <td class="align-center">4.5</td>
+            <td class="align-center">4.9</td>
+            <td>
+              <a
+                mat-button
+                class="waves-effect waves-light btn"
+                ><i class="material-icons left">edit</i></a
+              >
+              <a href="" class="waves-effect waves-light btn btn-red"
+                ><i class="material-icons left">delete_forever</i></a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,61 @@
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #3b4a61;
+  color: #3a3a3a;
+  font-size:medium;
+}
+
+.header h1 {
+  font-size: 2em;
+  margin: 10px;
+}
+
+.nav-wrapper {
+  background-color: #3b4a61;
+  font-size: 30px;
+  margin: 10px;
+}
+
+nav {
+  background-color: #3b4a61;
+}
+
+.container {
+    margin: 0 auto;
+    margin-top: 20px;
+    max-width: 1280px;
+    width: 100%;
+    background-color: rgb(230, 230, 230);
+  }
+
+@media only screen and (min-width: 601px) {
+    .container {
+      width: 100%;
+    }
+  }
+
+@media only screen and (min-width: 993px) {
+  .container {
+    width: 100%;
+  }
+}
+
+.btn-red {
+  background-color: rgb(196, 78, 78);
+}
+.btn-red:hover {
+  background-color: rgb(233, 115, 115);
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+th{
+    text-align: center;
+}
+
