@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatMenuTrigger } from '@angular/material/menu';
 import { Grade } from '../grades';
 import { Lesson } from '../lesson';
 import { LESSONS, STUDENT, STUDENT_GRADE } from '../mock-lessons';
 import { Student } from '../student';
 import { StudentGrade } from '../student-grade';
+
 
 @Component({
   selector: 'app-student-grade',
@@ -16,10 +18,16 @@ export class StudentGradeComponent implements OnInit {
   studentsGrades: StudentGrade[] = STUDENT_GRADE;
   grades: Grade[] = new Array<Grade>();
 
+  @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
+
   constructor() {}
 
   ngOnInit(): void {
     this.gradeView();
+  }
+
+  someMethod() {
+    this.trigger.openMenu();
   }
 
   gradeView() {

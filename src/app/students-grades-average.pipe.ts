@@ -1,5 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { StudentGrade } from './student-grade';
+import {MatMenuModule} from '@angular/material/menu';
 
 @Pipe({
   name: 'studentsGradesAverage',
