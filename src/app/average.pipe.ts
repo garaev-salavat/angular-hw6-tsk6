@@ -2,24 +2,15 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { StudentGrade } from './student-grade';
 
 @Pipe({
-  name: 'average'
+  name: 'average',
 })
 export class AveragePipe implements PipeTransform {
-
-  transform(studentsGrade: StudentGrade[], studentId: number): any {
+  transform(value: number[]): any {
     let studAverage: number = 0;
-let element: number = 0;
-    for (let index = 0; index < studentsGrade.length; index++) {
-      element = element + studentsGrade[index].studentGrade;
-      
+    let element: number = 0;
+    for (let index = 0; index < value.length; index++) {
+      element = element + value[index];
     }
-
-      // if (element.studentId === studentId) {
-      //   studAverage = studAverage + element.studentGrade;
-      // }
-    // });
-
-    return element; 
+    return element / value.length;
   }
-
 }

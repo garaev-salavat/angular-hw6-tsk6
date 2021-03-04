@@ -48,32 +48,26 @@
           <tr>
             <ng-container *ngFor="let lesson of lessons">
               <th>
-                {{ lesson.lessonDate | date: "dd.MM.yyyy" }}
+                {{ lesson.date | date: "dd.MM.yyyy" }}
               </th>
             </ng-container>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let student of students; let i = index">
+          <tr *ngFor="let grade of grades; let i = index">
             <td>{{ i + 1 }}</td>
-            <td>
-              {{ student.studentLastName }} {{ student.studentFirstName }}
+            <td>{{ grade.student.firstName }} {{ grade.student.lastName }}</td>
+            <td class="align-center" *ngFor="let ingrade of grades[i].grades">
+              {{ ingrade | gradeToNum }}
             </td>
-            <ng-container *ngFor="let grade of studentsGrade">
-              <td
-                class="align-center"
-                *ngIf="grade.studentId === student.studentId"
-              >
-                {{ grade.studentGrade }}
-              </td>
-            </ng-container>
-
-            <td class="align-center">4.5</td>
-            <td class="align-center">4.9</td>
+            <td class="align-center">
+              {{ grades[i].grades | studentsGradesAverage | number:'1.2-2'}}
+            </td>
+            <td class="align-center">
+              {{ grades[i].grades | studentsGradesAverage | number: '1.0-0'}}
+            </td>
             <td>
-              <a
-                mat-button
-                class="waves-effect waves-light btn"
+              <a mat-button class="waves-effect waves-light btn"
                 ><i class="material-icons left">edit</i></a
               >
               <a href="" class="waves-effect waves-light btn btn-red"
@@ -83,7 +77,6 @@
           </tr>
         </tbody>
       </table>
-
     </div>
   </div>
 </div>

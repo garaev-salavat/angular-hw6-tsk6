@@ -1,7 +1,7 @@
-export interface Lesson {
-    lessonId:number;
-    lessonDate: Date;
-    lessonTheme: string;
-    lessonHomework: string;
-    lessonNote: string;
+export class Lesson {
+    id:number;
+    date: Date;
+    theme: string;
+    homework: string;
+    note: string;
 }

@@ -1,5 +1,5 @@
-export interface StudentGrade {
-    lessonId:number;
+export class StudentGrade {
     studentId:number;
-    studentGrade:number;
+    lessonId:number;
+    grade:number;
 }

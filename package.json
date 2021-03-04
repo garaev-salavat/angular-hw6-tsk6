@@ -2,6 +2,7 @@
   "name": "angular-hw6-tsk6",
   "version": "0.0.0",
   "scripts": {
+    "starto": "ng serve -o",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",

@@ -5,19 +5,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StudentGradeModule } from './student-grade/student-grade.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AveragePipe } from './average.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    AveragePipe
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     StudentGradeModule,
-    BrowserAnimationsModule
-  ],
+    BrowserAnimationsModule,
+      ],
   providers: [],
   bootstrap: [AppComponent]
 })
