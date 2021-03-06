@@ -5,26 +5,13 @@
       <nav>
         <div class="nav-wrapper">
           <a href="#" class="brand-logo">Журнал успеваемости студентов</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <!-- <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li>
               <a mat-button class="waves-effect waves-light btn"
-                ><i class="material-icons left">add_box</i>Новый студент</a
+                >Новый студент</a
               >
             </li>
-            <!-- <li>
-                <a
-                  mat-button
-                  (click)="openEditDialog()"
-                  class="waves-effect waves-light btn"
-                  ><i class="material-icons left">edit</i>Редактировать</a
-                >
-              </li>
-              <li>
-                <a href="" class="waves-effect waves-light btn btn-red"
-                  ><i class="material-icons left">delete_forever</i>Удалить</a
-                >
-              </li> -->
-          </ul>
+          </ul> -->
         </div>
       </nav>
       <table class="highlight">
@@ -72,16 +59,16 @@
               </button>
               <mat-menu #menu="matMenu">
                 <button mat-menu-item>
-                  <mat-icon>dialpad</mat-icon>
-                  <span>Redial</span>
-                </button>
-                <button mat-menu-item disabled>
-                  <mat-icon>voicemail</mat-icon>
-                  <span>Check voice mail</span>
+                  <mat-icon>edit</mat-icon>
+                  <span>Edit grade</span>
                 </button>
                 <button mat-menu-item>
-                  <mat-icon>notifications_off</mat-icon>
-                  <span>Disable alerts</span>
+                  <mat-icon>edit</mat-icon>
+                  <span>Edit</span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>delete</mat-icon>
+                  <span>Delete</span>
                 </button>
               </mat-menu>
               <!-- <a mat-button class="waves-effect waves-light btn"

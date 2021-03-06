@@ -1,0 +1,75 @@
+<div class="container">
+    <div class="row">
+      <div class="col s12">
+        <div class="header"><h1>Курс: Angular 10+ Базовые знания</h1></div>
+        <nav>
+          <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Список студентов</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li>
+                <a mat-button class="waves-effect waves-light btn"
+                  ><i class="material-icons left">add_box</i>Добавить</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <div style="border: 2px solid gray; margin-top: 5px">
+          <form [formGroup]="studentSendForm">
+            <div class="col s6"><input type="text" formControlName="firstName" /></div>
+            <div class="col s6"><input type="text" formControlName="lastName"/></div>
+            <div class="button-row">
+              <button type="button" (click)="sendStudentForm()">Сохранить</button>
+            </div>
+          </form>
+        </div>
+  
+        <table class="highlight">
+          <thead>
+            <tr>
+              <th rowspan="2">Номер</th>
+              <th>Имя</th>
+              <th>Фамилия</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let student of students; let i = index">
+              <td style="width: 1em">{{ i + 1 }}</td>
+              <td>{{ student.firstName }}</td>
+              <td>{{ student.lastName }}</td>
+              <td>
+                <!-- <button
+                  mat-icon-button
+                  [matMenuTriggerFor]="menu"
+                  aria-label="Example icon-button with a menu"
+                >
+                  <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item>
+                    <mat-icon>dialpad</mat-icon>
+                    <span>Redial</span>
+                  </button>
+                  <button mat-menu-item disabled>
+                    <mat-icon>voicemail</mat-icon>
+                    <span>Check voice mail</span>
+                  </button>
+                  <button mat-menu-item>
+                    <mat-icon>notifications_off</mat-icon>
+                    <span>Disable alerts</span>
+                  </button>
+                </mat-menu> -->
+                <!-- <a mat-button class="waves-effect waves-light btn"
+                    ><i class="material-icons left">edit</i></a
+                  >
+                  <a href="" class="waves-effect waves-light btn btn-red"
+                    ><i class="material-icons left">delete_forever</i></a
+                  > -->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

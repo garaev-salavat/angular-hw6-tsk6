@@ -11,6 +11,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
+import { StudentsModule } from './students/students.module';
+import { GradesModule } from './grades/grades.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,6 +27,8 @@ import { MatCardModule } from '@angular/material/card';
     MatButtonModule,
     MatFormFieldModule,
     MatCardModule,
+    StudentsModule,
+    GradesModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

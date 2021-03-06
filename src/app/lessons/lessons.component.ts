@@ -23,6 +23,14 @@ export class LessonsComponent implements OnInit {
   }
 
   sendLessonForm(): void {
+
+    let lesson: Lesson = new Lesson();
+    lesson.date = this.lessonSendForm.get("date").value;
+    lesson.theme = this.lessonSendForm.get("theme").value
+    lesson.homework = this.lessonSendForm.get("homework").value
+    lesson.note = this.lessonSendForm.get("note").value
+    this.lessons.push(lesson)
+
     console.log(this.lessonSendForm);
   }
 

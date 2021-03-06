@@ -7,6 +7,7 @@ import { AveragePipe } from '../average.pipe';
 import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +16,7 @@ import {MatButtonModule} from '@angular/material/button';
     GradeToNumPipe, 
     StudentsGradesAveragePipe,
     AveragePipe],
-  imports: [CommonModule, MatIconModule, MatMenuModule, MatButtonModule],
+  imports: [CommonModule, MatIconModule, MatMenuModule, MatButtonModule, ReactiveFormsModule],
   exports: [StudentGradeComponent],
 })
 export class StudentGradeModule {}
