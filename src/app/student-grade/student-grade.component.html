@@ -1,19 +1,19 @@
-<div class="container">
-  <div class="row">
-    <div class="col s12">
-      <div class="header"><h1>Курс: Angular 10+ Базовые знания</h1></div>
+
+<div>
+  <div>
+    <div>
+      <div><h1>Курс: Angular 10+ Базовые знания</h1></div>
       <nav>
-        <div class="nav-wrapper">
-          <a href="#" class="brand-logo">Журнал успеваемости студентов</a>
-          <!-- <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li>
-              <a mat-button class="waves-effect waves-light btn"
-                >Новый студент</a
-              >
-            </li>
-          </ul> -->
+        <div>
+          <h4>Журнал успеваемости студентов</h4>
         </div>
       </nav>
+      <!-- <form [formGroup]="gradeSendForm">
+        <div class="col s3"><input type="text" formControlName="grade"/></div>
+        <div class="button-row">
+          <button type="button" (click)="sendGradeForm()">Сохранить</button>
+        </div>
+      </form> -->
       <table class="highlight">
         <thead>
           <tr>
@@ -33,7 +33,7 @@
             </th>
           </tr>
           <tr>
-            <ng-container *ngFor="let lesson of lessons">
+            <ng-container *ngFor="let lesson of lessons; let j = index">
               <th>
                 {{ lesson.date | date: "dd.MM.yyyy" }}
               </th>
@@ -44,39 +44,23 @@
           <tr *ngFor="let grade of grades; let i = index">
             <td>{{ i + 1 }}</td>
             <td>{{ grade.student.firstName }} {{ grade.student.lastName }}</td>
-            <td class="align-center" *ngFor="let ingrade of grades[i].grades">
-              {{ ingrade | gradeToNum }}
+            <td class="align-center" *ngFor="let ingrade of grades[i].grades; let j = index">
+               {{ ingrade | gradeToNum }}
+               <form  >
+               <select name="select" [value]="ingrade | gradeToNum" (change)="gradeQq($event.target.value, i, j, ingrade)">
+                 <option value="1">1</option>
+                 <option value="2">2</option>
+                 <option value="3">3</option>
+                 <option value="4">4</option>
+                 <option value="5">5</option>
+                 <option value="6">6</option>
+               </select></form>
             </td>
             <td class="align-center">
-              {{ grades[i].grades | studentsGradesAverage | number:'1.2-2'}}
+              {{ grades[i].grades | studentsGradesAverage}}
             </td>
             <td class="align-center">
-              {{ grades[i].grades | studentsGradesAverage | number: '1.0-0'}}
-            </td>
-            <td>
-              <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-                <mat-icon>more_vert</mat-icon>
-              </button>
-              <mat-menu #menu="matMenu">
-                <button mat-menu-item>
-                  <mat-icon>edit</mat-icon>
-                  <span>Edit grade</span>
-                </button>
-                <button mat-menu-item>
-                  <mat-icon>edit</mat-icon>
-                  <span>Edit</span>
-                </button>
-                <button mat-menu-item>
-                  <mat-icon>delete</mat-icon>
-                  <span>Delete</span>
-                </button>
-              </mat-menu>
-              <!-- <a mat-button class="waves-effect waves-light btn"
-                ><i class="material-icons left">edit</i></a
-              >
-              <a href="" class="waves-effect waves-light btn btn-red"
-                ><i class="material-icons left">delete_forever</i></a
-              > -->
+              {{ grades[i].grades | studentsGradesAverage | number: "1.0-0" }}
             </td>
           </tr>
         </tbody>

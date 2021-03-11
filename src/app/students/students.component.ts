@@ -26,7 +26,10 @@ export class StudentsComponent implements OnInit {
     student.firstName = this.studentSendForm.get("firstName").value;
     student.lastName = this.studentSendForm.get("lastName").value
     this.students.push(student)
-    console.log(this.students)
+  }
+
+  deleteStudent(i: number){
+    this.students.splice(i, 1);
   }
 
   ngOnInit(): void {}

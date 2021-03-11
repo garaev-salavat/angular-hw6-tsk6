@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { Lesson } from '../lesson';
 import { LESSONS } from '../mock-lessons';
@@ -8,7 +8,7 @@ import { LESSONS } from '../mock-lessons';
   templateUrl: './lessons.component.html',
   styleUrls: ['./lessons.component.css'],
 })
-export class LessonsComponent implements OnInit {
+export class LessonsComponent implements OnInit, DoCheck, OnChanges {
   lessons: Lesson[] = LESSONS;
 
   lessonSendForm: FormGroup;
@@ -21,10 +21,14 @@ export class LessonsComponent implements OnInit {
       note: fb.control(''),
     });
   }
+  ngOnChanges(changes: SimpleChanges): void {
+    changes
+  }
 
   sendLessonForm(): void {
 
     let lesson: Lesson = new Lesson();
+    lesson.date = this.lessonSendForm.get("id").value;
     lesson.date = this.lessonSendForm.get("date").value;
     lesson.theme = this.lessonSendForm.get("theme").value
     lesson.homework = this.lessonSendForm.get("homework").value
@@ -34,5 +38,23 @@ export class LessonsComponent implements OnInit {
     console.log(this.lessonSendForm);
   }
 
-  ngOnInit(): void {}
+  deleteLesson(i: number){
+    this.lessons.splice(i, 1);
+  }
+
+  editLesson(id: number){
+    
+  }
+
+
+
+  ngOnInit(): void {
+    
+  }
+
+  ngDoCheck(): void {
+   
+  }
+
+
 }

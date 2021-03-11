@@ -82,7 +82,11 @@ export const STUDENT_GRADE: StudentGrade[] = [
     studentId: 1,
     grade: 6,
   },
-
+  {
+    lessonId: 1,
+    studentId: 2,
+    grade: 4,
+  },
   {
     lessonId: 2,
     studentId: 2,
@@ -137,6 +141,21 @@ export const STUDENT_GRADE: StudentGrade[] = [
     lessonId: 4,
     studentId: 4,
     grade: 4,
+  },
+  {
+    lessonId: 1,
+    studentId: 5,
+    grade: 3,
+  },
+  {
+    lessonId: 2,
+    studentId: 5,
+    grade: 3,
+  },
+  {
+    lessonId: 5,
+    studentId: 5,
+    grade: 3,
   },
   {
     lessonId: 4,
